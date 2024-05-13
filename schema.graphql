@@ -1,26 +1,7 @@
-type EventsSummary {
-  id: ID!
-  eTHRegistrarController_NameRegistered: [ETHRegistrarController_NameRegistered!]! @derivedFrom(field: "eventsSummary")
-  eTHRegistrarController_NameRegisteredCount: BigInt!
-  eTHRegistrarController_NameRenewed: [ETHRegistrarController_NameRenewed!]! @derivedFrom(field: "eventsSummary")
-  eTHRegistrarController_NameRenewedCount: BigInt!
-}
-
-type ETHRegistrarController_NameRegistered {
-  id: ID!
-  name: String!
+type EnsHandle {
+  id: ID! # The name of the ensHandle
   label: String!
   owner: String!
   cost: BigInt!
   expires: BigInt!
-  eventsSummary: String!
-}
-
-type ETHRegistrarController_NameRenewed {
-  id: ID!
-  name: String!
-  label: String!
-  cost: BigInt!
-  expires: BigInt!
-  eventsSummary: String!
 }

@@ -1,13 +1,15 @@
 name: My Envio Indexer
 networks:
-- id: 1
-  start_block: 0
-  end_block: null
-  contracts:
-  - name: ETHRegistrarController
-    address:
-    - 0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5
-    handler: src/EventHandlers.ts
-    events:
-    - event: NameRegistered(string name, bytes32 indexed label, address indexed owner, uint256 cost, uint256 expires)
-    - event: NameRenewed(string name, bytes32 indexed label, uint256 cost, uint256 expires)
+  - id: 1
+    # hypersync_config:
+    #   url: http://eth.backup.hypersync.xyz/
+    start_block: 0
+    end_block: null
+    contracts:
+      - name: ETHRegistrarController
+        address:
+          - 0x283Af0B28c62C092C9727F1Ee09c02CA627EB7F5
+        handler: src/EventHandlers.ts
+        events:
+          - event: NameRegistered(string name, bytes32 indexed label, address indexed owner, uint256 cost, uint256 expires)
+          - event: NameRenewed(string name, bytes32 indexed label, uint256 cost, uint256 expires)
