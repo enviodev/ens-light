@@ -12,4 +12,6 @@ networks:
         handler: src/EventHandlers.ts
         events:
           - event: NameRegistered(string name, bytes32 indexed label, address indexed owner, uint256 cost, uint256 expires)
+            isAsync: true
           - event: NameRenewed(string name, bytes32 indexed label, uint256 cost, uint256 expires)
+            isAsync: true
